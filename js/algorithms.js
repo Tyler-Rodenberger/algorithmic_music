@@ -9,8 +9,8 @@
 
 
 
-let nums = [8, 7, 3, 5, 6, 1];
-bubblesort(nums);
+// let nums = [8, 7, 3, 5, 6, 1];
+// bubblesort(nums);
 
 function bubblesort(nums) {
     console.log("=== Original List ===");
