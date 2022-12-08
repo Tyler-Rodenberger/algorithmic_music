@@ -1,26 +1,31 @@
-async function selectionSort() {
+async function combSort() {
     var reference_list = ["C4", "D4", "EB4", "F4", "G4", "AB4", "B4", "C5", "EB5"];
     const synth = new Tone.Synth().toDestination();
     let nums = [0, 1, 2, 3, 4, 5, 6, 7];
     shuffle(nums);
-    for (let i = 0; i < nums.length; i += 1) {
-        if (sorted(nums)) {
-            return;
-        }
-        let min = i;
-        for (let j = i + 1; j < nums.length; j += 1) {
-            if (nums[j] < nums[min]) {
-                min = j;
+    let gap = nums.length;
+    let swapped = true;
+    while (gap != 1 || swapped == true) {
+        gap = getNextGap(gap);
+        swapped = false;
+        for (let i = 0; i < nums.length - gap; i += 1) {
+            if (nums[i] > nums[i+gap]) {
+                swap(nums, i, i + gap);
+                swapped = true;
             }
-        }
-        if (min != i) {
-            swap(nums, min, i);
         }
         for (let i = 0; i < nums.length; i += 1) {
             synth.triggerAttackRelease(reference_list[nums[i]], "16N");
             await new Promise(r => setTimeout(r, 150));
         }
     }
+}
+
+function getNextGap(gap) {
+    gap = parseInt((gap * 10) / 13, 10);
+    if (gap < 1)
+        return 1;
+    return gap;
 }
 
 function shuffle(array) {
