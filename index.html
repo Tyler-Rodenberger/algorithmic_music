@@ -1,18 +1,33 @@
+<head>
+  <p>This is the header.</p>
+</head>
+
 <body>
-
-  <h> "bubblesort" </h>
-
-  <button id="bubblesort_button" type="button"></button>
-
+  <p>This is the body.</p>
+  <!-- <button id="bubblesort_button" type="button"></button> -->
+  <!-- <script src="js/tones.js"></script> -->
   <script src="js/build-v14-7-77/Tone.js"></script>
-  <script>
+  <script src="js/bubblesort.js"></script>
+  <h2> Bubble Sort </h2>
+  <input type = "button" onclick = "bubblesort()" value = "Bubble Sort">
+  <h2> Selection Sort </h2>
+  <input type = "button" onclick = "selectionSort()" value = "Selection Sort">
+  <!-- <script>
     const bubblesort_button = document.querySelector('#bubblesort_button');
     const synth = new Tone.Synth().toDestination();
     bubblesort_button.addEventListener('click', () => {
       console.log("Running bubblesort");
       synth.triggerAttackRelease("C4", "8n");
     });
-  </script>
+  </script> -->
+
+  <h3> The plan going forward </h3>
+  <p>* Write the other algorithms: </p>
+  <p>   Bubblesort</p>
+  <p>   Selection Sort</p>
+  <p>   Bubblesort</p>
+  <p>   Bubblesort</p>
+  <p>   Bubblesort</p>
 
   <!-- <h> "bubblesort" </h>
 
