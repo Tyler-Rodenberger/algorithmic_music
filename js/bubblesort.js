@@ -3,22 +3,22 @@ var abort = false;
 
 function bubble_start_stop () {
     button = document.getElementById("bubblebutton");
-    button.addEventListener("click", start);
+    button.addEventListener("click", bubblestart);
 }
 
-function start() {
+function bubblestart() {
     console.log("Started");
     bubblesort();
-    button.removeEventListener("click", start);
-    button.addEventListener("click", stop);
+    button.removeEventListener("click", bubblestart);
+    button.addEventListener("click", bubblestop);
     button.value = "Stop";
 }
 
-async function stop() {
+async function bubblestop() {
     abort = true;
     console.log("Stopped");
-    button.removeEventListener("click", stop);
-    button.addEventListener("click", start);
+    button.removeEventListener("click", bubblestop);
+    button.addEventListener("click", bubblestart);
     button.value = "Start";
     await new Promise(r => setTimeout(r, 300));
     abort = false;

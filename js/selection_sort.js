@@ -3,22 +3,22 @@ var abort = false;
 
 function selection_start_stop () {
     button = document.getElementById("selectionbutton");
-    button.addEventListener("click", start);
+    button.addEventListener("click", selectionstart);
 }
 
-function start() {
+function selectionstart() {
     console.log("Started");
     selectionSort();
-    button.removeEventListener("click", start);
-    button.addEventListener("click", stop);
+    button.removeEventListener("click", selectionstart);
+    button.addEventListener("click", selectionstop);
     button.value = "Stop";
 }
 
-async function stop() {
+async function selectionstop() {
     abort = true;
     console.log("Stopped");
-    button.removeEventListener("click", stop);
-    button.addEventListener("click", start);
+    button.removeEventListener("click", selectionstop);
+    button.addEventListener("click", selectionstart);
     button.value = "Start";
     await new Promise(r => setTimeout(r, 300));
     abort = false;

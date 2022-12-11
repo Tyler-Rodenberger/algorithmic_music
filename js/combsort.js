@@ -2,23 +2,23 @@ var button;
 var abort = false;
 
 function comb_start_stop () {
-    button = document.getElementById("randombutton");
-    button.addEventListener("click", start);
+    button = document.getElementById("combbutton");
+    button.addEventListener("click", combstart);
 }
 
-function start() {
+function combstart() {
     console.log("Started");
     combSort();
-    button.removeEventListener("click", start);
-    button.addEventListener("click", stop);
+    button.removeEventListener("click", combstart);
+    button.addEventListener("click", combstop);
     button.value = "Stop";
 }
 
-async function stop() {
+async function combstop() {
     abort = true;
     console.log("Stopped");
-    button.removeEventListener("click", stop);
-    button.addEventListener("click", start);
+    button.removeEventListener("click", combstop);
+    button.addEventListener("click", combstart);
     button.value = "Start";
     await new Promise(r => setTimeout(r, 300));
     abort = false;
