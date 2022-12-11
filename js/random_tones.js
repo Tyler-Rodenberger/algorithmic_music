@@ -3,7 +3,7 @@ async function randomTones() {
                           "C4", "D4", "EB4", "F4", "G4", "AB4", "B4", "C5", "D5", "EB5",
                           "F5", "G5", "AB5", "B5", "C6", "D6", "EB6", "F6", "G6", "AB6"];
     const synth = new Tone.Synth().toDestination();
-    for (let i = 0; i < 10; i += 1) {
+    for (let i = 0; i < 1000; i += 1) {
         let nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
                     10, 11, 12, 13, 14, 15, 16, 17 ,18, 19,
                     20, 21, 22, 23, 24, 25, 26, 27, 28, 29];
