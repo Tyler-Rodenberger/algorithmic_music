@@ -1,3 +1,29 @@
+var button;
+var abort = false;
+
+function bubble_start_stop () {
+    button = document.getElementById("bubblebutton");
+    button.addEventListener("click", start);
+}
+
+function start() {
+    console.log("Started");
+    bubblesort();
+    button.removeEventListener("click", start);
+    button.addEventListener("click", stop);
+    button.value = "Stop";
+}
+
+async function stop() {
+    abort = true;
+    console.log("Stopped");
+    button.removeEventListener("click", stop);
+    button.addEventListener("click", start);
+    button.value = "Start";
+    await new Promise(r => setTimeout(r, 300));
+    abort = false;
+}
+
 async function bubbleSort() {
     var reference_list = ["C4", "D4", "EB4", "F4", "G4", "AB4", "B4", "C5", "EB5"];
     const synth = new Tone.Synth().toDestination();
@@ -15,8 +41,12 @@ async function bubbleSort() {
         }
         count += 1;
         for (let i = 0; i < nums.length; i += 1) {
-            synth.triggerAttackRelease(reference_list[nums[i]], "16N");
-            await new Promise(r => setTimeout(r, 150));
+            if (abort == true) {
+                return;
+            } else {
+                synth.triggerAttackRelease(reference_list[nums[i]], "16N");
+                await new Promise(r => setTimeout(r, 150));
+            }
         }
     }
 }
