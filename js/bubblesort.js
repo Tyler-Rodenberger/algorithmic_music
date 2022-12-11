@@ -8,7 +8,7 @@ function bubble_start_stop () {
 
 function bubblestart() {
     console.log("Started");
-    bubblesort();
+    bubbleSort();
     button.removeEventListener("click", bubblestart);
     button.addEventListener("click", bubblestop);
     button.value = "Stop";

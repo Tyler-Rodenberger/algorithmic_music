@@ -6,19 +6,19 @@ function random_start_stop () {
     button.addEventListener("click", randomstart);
 }
 
-function selectionstart() {
+function randomstart() {
     console.log("Started");
     randomTones();
-    button.removeEventListener("click", selectionstart);
-    button.addEventListener("click", selectionstop);
+    button.removeEventListener("click", randomstart);
+    button.addEventListener("click", randomstop);
     button.value = "Stop";
 }
 
-async function selectionstop() {
+async function randomstop() {
     abort = true;
     console.log("Stopped");
-    button.removeEventListener("click", selectionstop);
-    button.addEventListener("click", selectionstart);
+    button.removeEventListener("click", randomstop);
+    button.addEventListener("click", randomstart);
     button.value = "Start";
     await new Promise(r => setTimeout(r, 300));
     abort = false;
