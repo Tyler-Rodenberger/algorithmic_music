@@ -3,11 +3,11 @@ var abort = false;
 
 function bubble_start_stop () {
     button = document.getElementById("bubblebutton");
+    bubblestart();
     button.addEventListener("click", bubblestart);
 }
 
 function bubblestart() {
-    console.log("Started");
     bubbleSort();
     button.removeEventListener("click", bubblestart);
     button.addEventListener("click", bubblestop);
@@ -16,7 +16,6 @@ function bubblestart() {
 
 async function bubblestop() {
     abort = true;
-    console.log("Stopped");
     button.removeEventListener("click", bubblestop);
     button.addEventListener("click", bubblestart);
     button.value = "Start";

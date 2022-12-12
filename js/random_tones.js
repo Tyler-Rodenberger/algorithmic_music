@@ -3,6 +3,7 @@ var abort = false;
 
 function random_start_stop () {
     button = document.getElementById("randombutton");
+    randomstart();
     button.addEventListener("click", randomstart);
 }
 

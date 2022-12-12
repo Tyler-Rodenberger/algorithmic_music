@@ -3,6 +3,7 @@ var abort = false;
 
 function comb_start_stop () {
     button = document.getElementById("combbutton");
+    combstart();
     button.addEventListener("click", combstart);
 }
 

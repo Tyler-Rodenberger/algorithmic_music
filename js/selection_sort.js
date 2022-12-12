@@ -3,6 +3,7 @@ var abort = false;
 
 function selection_start_stop () {
     button = document.getElementById("selectionbutton");
+    selectionstart();
     button.addEventListener("click", selectionstart);
 }
 
