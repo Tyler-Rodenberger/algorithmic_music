@@ -31,6 +31,7 @@ async function selectionSort() {
     shuffle(nums);
     for (let i = 0; i < nums.length; i += 1) {
         if (sorted(nums)) {
+            button.value = "Start";
             return;
         }
         let min = i;

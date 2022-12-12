@@ -48,6 +48,7 @@ async function combSort() {
             await new Promise(r => setTimeout(r, 150));
         }
     }
+    button.value = "Start";
 }
 
 function getNextGap(gap) {

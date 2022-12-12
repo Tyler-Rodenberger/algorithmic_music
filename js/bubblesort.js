@@ -32,7 +32,8 @@ async function bubbleSort() {
     let count = 0;
     for (let j = 0; j < nums.length; j += 1) {
         if (sorted(nums)) {
-          return;
+            button.value = "Start";
+            return;
         }
         for (let i = 0; i < nums.length - count; i += 1) {
             if (nums[i] > nums[i + 1]) {
