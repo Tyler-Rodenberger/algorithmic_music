@@ -14,6 +14,18 @@
       <a href="./about.html">About</a>
     </nav>
 
-      
+      <script src="js/build-v14-7-77/Tone.js"></script>
+      <script src = "js/bandmaker.js"></script>
+
+      <h1>Start/Stop Music</h1>
+      <input type="button" onclick="bandmaker_start_stop(); bass_start_stop(); lead_synth_start_stop(); drums_start_stop(); accompaniment_start_stop()" value="Start" id="bandmakerbutton">
+      <h1>Bass</h1>
+      <input type="button" onclick="bass_mute_unmute()" value="Unmute" id="bassbutton">
+      <h1>Lead</h1>
+      <input type="button" onclick="lead_synth_mute_unmute()" value="Unmute" id="leadsynthbutton">
+      <h1>Drums</h1>
+      <input type="button" onclick="drums_mute_unmute()" value="Unmute" id="drumsbutton">
+      <h1>Accompaniment</h1>
+      <input type="button" onclick="accompaniment_mute_unmute()" value="Unmute" id="accompanimentbutton">
   </body>
 </html>
