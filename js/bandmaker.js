@@ -67,7 +67,7 @@ function bass_mute_unmute () {
 
 function bassunmute() {
     console.log("bass unmuted")
-    bass_volume = -3;
+    bass_volume = -1;
     button.removeEventListener("click", bassunmute);
     button.addEventListener("click", bassmute);
     button.value = "Mute";
@@ -98,7 +98,7 @@ function drums_mute_unmute () {
 
 function drumsunmute() {
     console.log("drums unmuted")
-    drums_volume = -8;
+    drums_volume = -4;
     button.removeEventListener("click", drumsunmute);
     button.addEventListener("click", drumsmute);
     button.value = "Mute";
@@ -130,7 +130,7 @@ function accompaniment_mute_unmute () {
 
 function accompanimentunmute() {
     console.log("accompaniment unmuted")
-    accompaniment_volume = -16;
+    accompaniment_volume = -12;
     button.removeEventListener("click", accompanimentunmute);
     button.addEventListener("click", accompanimentmute);
     button.value = "Mute";
@@ -162,7 +162,7 @@ function lead_synth_mute_unmute () {
 
 function lead_synthunmute() {
     console.log("lead_synth unmuted")
-    lead_synth_volume = -12;
+    lead_synth_volume = -14;
     button.removeEventListener("click", lead_synthunmute);
     button.addEventListener("click", lead_synthmute);
     button.value = "Mute";
