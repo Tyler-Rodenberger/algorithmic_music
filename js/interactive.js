@@ -59,28 +59,37 @@ function f() {
     synthf.triggerRelease(["G#4", "B4", "E5", "G#5", "B5"], now + 2);
 }
 
-function g() {
+async function g() {
     console.log("g");
-    const synthg = new Tone.Synth().toDestination();
-    synthg.triggerAttackRelease("C4", "4N");
+    const autoPannerg = new Tone.AutoPanner("4n").toDestination().start();
+    const oscillatorg = new Tone.Oscillator().connect(autoPannerg).start();
+    await new Promise(r => setTimeout(r, 3000));
+    oscillatorg.stop();
+
 }
 
-function h() {
+async function h() {
     console.log("h");
-    const synthh = new Tone.Synth().toDestination();
-    synthh.triggerAttackRelease("C4", "4N");
+    const autoFilterh = new Tone.AutoFilter("4n").toDestination().start();
+    const oscillatorh = new Tone.Oscillator().connect(autoFilterh).start();
+    await new Promise(r => setTimeout(r, 3000));
+    oscillatorh.stop();
 }
 
-function i() {
+async function i() {
     console.log("i");
-    const synthi = new Tone.Synth().toDestination();
-    synthi.triggerAttackRelease("C4", "4N");
+    const autoFilteri = new Tone.AutoFilter("4n").toDestination().start();
+    const autoPanneri = new Tone.AutoPanner("4n").toDestination().start();
+    const oscillatori = new Tone.Oscillator().connect(autoFilteri).connect(autoPanneri).start();
+    await new Promise(r => setTimeout(r, 3000));
+    oscillatori.stop();
 }
 
 function j() {
     console.log("j");
-    const synthj = new Tone.Synth().toDestination();
-    synthj.triggerAttackRelease("C4", "4N");
+    const chorusj = new Tone.Chorus(5, 15, 30).toDestination().start();
+    const synthj = new Tone.PolySynth().connect(chorusj);
+    synthj.triggerAttackRelease(["C#3", "F3", "A3"], "8n");
 }
 
 function k() {
