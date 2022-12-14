@@ -35,6 +35,7 @@ async function c() {
 function d() {
     console.log("d");
     const synthd = new Tone.AMSynth().toDestination();
+    synthd.volume.value = -1;
     synthd.triggerAttackRelease("D2", "1N");
 }
 
@@ -63,7 +64,7 @@ async function g() {
     console.log("g");
     const autoPannerg = new Tone.AutoPanner("4n").toDestination().start();
     const oscillatorg = new Tone.Oscillator().connect(autoPannerg).start();
-    await new Promise(r => setTimeout(r, 3000));
+    await new Promise(r => setTimeout(r, 2000));
     oscillatorg.stop();
 
 }
@@ -72,7 +73,7 @@ async function h() {
     console.log("h");
     const autoFilterh = new Tone.AutoFilter("4n").toDestination().start();
     const oscillatorh = new Tone.Oscillator().connect(autoFilterh).start();
-    await new Promise(r => setTimeout(r, 3000));
+    await new Promise(r => setTimeout(r, 2000));
     oscillatorh.stop();
 }
 
@@ -80,8 +81,10 @@ async function i() {
     console.log("i");
     const autoFilteri = new Tone.AutoFilter("4n").toDestination().start();
     const autoPanneri = new Tone.AutoPanner("4n").toDestination().start();
-    const oscillatori = new Tone.Oscillator().connect(autoFilteri).connect(autoPanneri).start();
-    await new Promise(r => setTimeout(r, 3000));
+    const distortioni = new Tone.Distortion(1).toDestination();
+    const oscillatori = new Tone.Oscillator().connect(autoFilteri).connect(autoPanneri).connect(distortioni).start();
+    oscillatori.volume.value = -20;
+    await new Promise(r => setTimeout(r, 2000));
     oscillatori.stop();
 }
 
@@ -89,103 +92,185 @@ function j() {
     console.log("j");
     const chorusj = new Tone.Chorus(5, 15, 30).toDestination().start();
     const synthj = new Tone.PolySynth().connect(chorusj);
-    synthj.triggerAttackRelease(["C#3", "F3", "A3"], "8n");
+    synthj.triggerAttackRelease(["C#3", "F3", "A3"], "8N");
 }
 
 function k() {
     console.log("k");
-    const synthk = new Tone.Synth().toDestination();
-    synthk.triggerAttackRelease("C4", "4N");
+    const chorusk = new Tone.Chorus(10, 50, 100).toDestination().start();
+    const synthk = new Tone.PolySynth().connect(chorusk);
+    synthk.triggerAttackRelease(["C#3", "F3", "A3"], "2N");
 }
 
 function l() {
     console.log("l");
-    const synthl = new Tone.Synth().toDestination();
-    synthl.triggerAttackRelease("C4", "4N");
+    const distortionl = new Tone.Distortion(1).toDestination();
+    const synthl = new Tone.FMSynth().connect(distortionl);
+    synthl.triggerAttackRelease("A1", "4N");
 }
 
 function m() {
     console.log("m");
-    const synthm = new Tone.Synth().toDestination();
-    synthm.triggerAttackRelease("C4", "4N");
+    const distortionm = new Tone.Distortion(1).toDestination();
+    const synthm = new Tone.PolySynth().connect(distortionm);
+    synthm.volume.value = -12;
+    synthm.triggerAttackRelease(["A3", "E4", "C5"], "4N");
 }
 
 function n() {
-    console.log("n");
-    const synthn = new Tone.Synth().toDestination();
-    synthn.triggerAttackRelease("C4", "4N");
+    const autoWahn = new Tone.AutoWah(50, 6, -30).toDestination();
+    const synthn = new Tone.Synth().connect(autoWahn);
+    autoWahn.Q.value = 6;
+    synthn.triggerAttackRelease("C4", "8n");
 }
 
 function o() {
     console.log("o");
-    const syntho = new Tone.Synth().toDestination();
-    syntho.triggerAttackRelease("C4", "4N");
-}
+    const feedbackDelay = new Tone.FeedbackDelay("8N", 0.5).toDestination();
+    const syntho = new Tone.MembraneSynth({
+    	octaves: 6,
+    	pitchDecay: 0.1
+    }).connect(feedbackDelay);
+    syntho.triggerAttackRelease("A2", "16N");
+    }
 
 function p() {
     console.log("p");
-    const synthp = new Tone.Synth().toDestination();
-    synthp.triggerAttackRelease("C4", "4N");
+    const pingPongp = new Tone.PingPongDelay("4N", 0.2).toDestination();
+    const distortionp = new Tone.Distortion(0.5).toDestination();
+    const synthp = new Tone.PolySynth().connect(pingPongp).connect(distortionp);
+    synthp.volume.value = -1;
+    synthp.triggerAttackRelease(["C5", "E5", "G5"], "32n");
 }
 
-function q() {
+async function q() {
     console.log("q");
-    const synthq = new Tone.Synth().toDestination();
-    synthq.triggerAttackRelease("C4", "4N");
+    const tremoloq = new Tone.Tremolo(9, 0.75).toDestination().start();
+    const oscillatorq = new Tone.Oscillator().connect(tremoloq).start();
+    await new Promise(r => setTimeout(r, 1500));
+    oscillatorq.stop();
 }
 
 function r() {
     console.log("r");
-    const synthr = new Tone.Synth().toDestination();
-    synthr.triggerAttackRelease("C4", "4N");
+    const autoWahr = new Tone.AutoWah(50, 6, -30).toDestination();
+    const pingPongr = new Tone.PingPongDelay("8N", 0.15).toDestination();
+    const synthr = new Tone.Synth().connect(autoWahr).connect(pingPongr);
+    autoWahr.Q.value = 6;
+    synthr.volume.value = 0;
+    synthr.triggerAttackRelease("G3", "8n");
 }
 
 function s() {
     console.log("s");
     const synths = new Tone.Synth().toDestination();
-    synths.triggerAttackRelease("C4", "4N");
+    synths.triggerAttackRelease("C6", "4N");
 }
 
 function t() {
     console.log("t");
-    const syntht = new Tone.Synth().toDestination();
-    syntht.triggerAttackRelease("C4", "4N");
+    const chorust = new Tone.Chorus(10, 5, 20).toDestination().start();
+    const syntht = new Tone.Synth().connect(chorust);
+    syntht.volume.value = -10;
+    syntht.triggerAttackRelease("C6", "8N");
 }
 
-function u() {
+async function u() {
     console.log("u");
-    const synthu = new Tone.Synth().toDestination();
-    synthu.triggerAttackRelease("C4", "4N");
+    const synthu1 = new Tone.AMSynth().toDestination();
+    const synthu2 = new Tone.AMSynth().toDestination();
+    const synthu3 = new Tone.AMSynth().toDestination();
+    synthu1.volume.value = -1;
+    synthu2.volume.value = -1;
+    synthu3.volume.value = -1;
+    synthu1.triggerAttackRelease("F2", "2N");
+    await new Promise(r => setTimeout(r, 150));
+    synthu2.triggerAttackRelease("F4", "2N");
+    await new Promise(r => setTimeout(r, 150));
+    synthu3.triggerAttackRelease("F6", "2N");
 }
 
-function v() {
+async function v() {
     console.log("v");
     const synthv = new Tone.Synth().toDestination();
-    synthv.triggerAttackRelease("C4", "4N");
+    synthv.triggerAttackRelease("C6", "32N");
+    await new Promise(r => setTimeout(r, 50));
+    synthv.triggerAttackRelease("C7", "8N");
 }
 
 function w() {
     console.log("w");
-    const synthw = new Tone.Synth().toDestination();
-    synthw.triggerAttackRelease("C4", "4N");
+    const pingPongw = new Tone.PingPongDelay("8N", 0.1).toDestination();
+    const synthw = new Tone.MetalSynth().connect(pingPongw).toDestination();
+    synthw.triggerAttackRelease("C-1", "1N");
 }
 
-function x() {
+async function x() {
     console.log("x");
-    const synthx = new Tone.Synth().toDestination();
-    synthx.triggerAttackRelease("C4", "4N");
+    const feedbackDelayx = new Tone.FeedbackDelay("8N", 0.5).toDestination();
+    const synthx = new Tone.MembraneSynth().connect(feedbackDelayx).toDestination();
+    synthx.triggerAttackRelease("G#2", "4N");
+    await new Promise(r => setTimeout(r, 150));
+    synthx.triggerAttackRelease("E3", "4N");
+    await new Promise(r => setTimeout(r, 150));
+    synthx.triggerAttackRelease("B#4", "4N");
 }
 
-function y() {
+async function y() {
     console.log("y");
-    const synthy = new Tone.Synth().toDestination();
-    synthy.triggerAttackRelease("C4", "4N");
+    const chorusy = new Tone.Chorus(5, 5, 5).toDestination().start();
+    const synthy = new Tone.Synth().connect(chorusy);
+    synthy.triggerAttackRelease("C5", "16N");
+    await new Promise(r => setTimeout(r, 100));
+    synthy.triggerAttackRelease("E4", "16N");
+    await new Promise(r => setTimeout(r, 100));
+    synthy.triggerAttackRelease("C3", "16N");
 }
 
-function z() {
+async function z() {
     console.log("z");
     const synthz = new Tone.Synth().toDestination();
-    synthz.triggerAttackRelease("C4", "4N");
+    synthz.triggerAttackRelease("E4", "32N");
+    await new Promise(r => setTimeout(r, 50));
+    synthz.triggerAttackRelease("D4", "32N");
+    await new Promise(r => setTimeout(r, 50));
+    synthz.triggerAttackRelease("C4", "32N");
+    await new Promise(r => setTimeout(r, 50));
+    synthz.triggerAttackRelease("D4", "32N");
+    await new Promise(r => setTimeout(r, 50));
+    synthz.triggerAttackRelease("E4", "32N");
+    await new Promise(r => setTimeout(r, 50));
+    synthz.triggerAttackRelease("G4", "32N");
+    await new Promise(r => setTimeout(r, 50));
+    synthz.triggerAttackRelease("C5", "32N");
+    await new Promise(r => setTimeout(r, 50));
+    synthz.triggerAttackRelease("E4", "32N");
+    await new Promise(r => setTimeout(r, 50));
+    synthz.triggerAttackRelease("D4", "32N");
+    await new Promise(r => setTimeout(r, 50));
+    synthz.triggerAttackRelease("C4", "32N");
+    await new Promise(r => setTimeout(r, 50));
+    synthz.triggerAttackRelease("D4", "32N");
+    await new Promise(r => setTimeout(r, 50));
+    synthz.triggerAttackRelease("E4", "32N");
+    await new Promise(r => setTimeout(r, 50));
+    synthz.triggerAttackRelease("G4", "32N");
+    await new Promise(r => setTimeout(r, 50));
+    synthz.triggerAttackRelease("C5", "32N");
+    await new Promise(r => setTimeout(r, 50));
+    synthz.triggerAttackRelease("E4", "32N");
+    await new Promise(r => setTimeout(r, 50));
+    synthz.triggerAttackRelease("D4", "32N");
+    await new Promise(r => setTimeout(r, 50));
+    synthz.triggerAttackRelease("C4", "32N");
+    await new Promise(r => setTimeout(r, 50));
+    synthz.triggerAttackRelease("E4", "32N");
+    await new Promise(r => setTimeout(r, 50));
+    synthz.triggerAttackRelease("G4", "32N");
+    await new Promise(r => setTimeout(r, 50));
+    synthz.triggerAttackRelease("C5", "32N");
+    await new Promise(r => setTimeout(r, 50));
+    synthz.triggerAttackRelease("C6", "32N");
 }
 
 
