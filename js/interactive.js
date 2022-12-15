@@ -161,10 +161,20 @@ function r() {
     synthr.triggerAttackRelease("G3", "8n");
 }
 
-function s() {
+async function s() {
     console.log("s");
     const synths = new Tone.Synth().toDestination();
-    synths.triggerAttackRelease("C6", "4N");
+    synths.triggerAttackRelease("C6", "16N");
+    await new Promise(r => setTimeout(r, 50));
+    synths.triggerAttackRelease("C1", "16N");
+    await new Promise(r => setTimeout(r, 50));
+    synths.triggerAttackRelease("C5", "16N");
+    await new Promise(r => setTimeout(r, 50));
+    synths.triggerAttackRelease("C2", "16N");
+    await new Promise(r => setTimeout(r, 50));
+    synths.triggerAttackRelease("C4", "16N");
+    await new Promise(r => setTimeout(r, 50));
+    synths.triggerAttackRelease("C3", "16N");
 }
 
 function t() {
