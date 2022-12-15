@@ -3,151 +3,123 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/master.css">
+    <link rel="stylesheet" href="master.css">
     <title>Algorithmic Music</title>
   </head>
+
   <body>
-    <nav>
+    <div class="navbar">
       <a href="./index.html">Home</a>
       <a href="./algorithms.html">Algorithms</a>
       <a href="./bandmaker.html">Band Maker</a>
       <a href="./interactive.html">Interactive</a>
-      <!-- <a href="./about.html">About</a> -->
-    </nav>
-    <div class="interactivetitle">
-      <h2>Interactive</h2>
     </div>
 
-    <div class="interactivedescription">
-      <style media="screen">
-        div {
-          width: 600px;
-          word-wrap: normal;
-        }
-      </style>
-      <p class="a">Welcome to the Interactive page. Each letter key is associated with a unique function which creates a unique sound. The sounds are all made using Node.js synths and oscillators with various effects being put on them. See the table below for more information.</p>
-    </div>
+    <div class="main">
+      <div class="title">
+        <h2>Interactive</h2>
+      </div>
 
-    <div class="theworks">
-      <script src="js/build-v14-7-77/Tone.js"></script>
-      <h3>Press any key A-Z</h3>
-      <script src="js/interactive.js"></script>
-    </div>
+      <div class="description">
+        <p>Welcome to the Interactive page. Each letter key is associated with a unique function which creates a unique sound. The sounds are all made using Node.js synths and oscillators with various effects being put on them. See the table below for more information.</p>
+      </div>
 
-    <div class="keykey">
-      <table>
-        <thead>
-          <tr>
-            <th>Input Key Reference/Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>A</td>
-            <td>PolySynth playing a Cmaj7add9 chord</td>
-          </tr>
-          <tr>
-            <td>B</td>
-            <td>Unedited MetalSynth</td>
-          </tr>
-          <tr>
-            <td>C</td>
-            <td>Unedited MembraneSynth playing descending line</td>
-          </tr>
-          <tr>
-            <td>D</td>
-            <td>AMSynth</td>
-          </tr>
-          <tr>
-            <td>E</td>
-            <td>DuoSynth</td>
-          </tr>
-          <tr>
-            <td>F</td>
-            <td>PolySynth playing arpeggiated Emaj chord</td>
-          </tr>
-          <tr>
-            <td>G</td>
-            <td>Standard oscillator with autoPanner</td>
-          </tr>
-          <tr>
-            <td>H</td>
-            <td>Standard oscillator with autoFilter</td>
-          </tr>
-          <tr>
-            <td>I</td>
-            <td>Standard oscillator with autoPanner, autoFilter, and distortion</td>
-          </tr>
-          <tr>
-            <td>J</td>
-            <td>PolySynth on a C#aug chord with chorus</td>
-          </tr>
-          <tr>
-            <td>K</td>
-            <td>Polysynth on a C#aug chord with chorus</td>
-          </tr>
-          <tr>
-            <td>L</td>
-            <td>FMSynth with distortion</td>
-          </tr>
-          <tr>
-            <td>M</td>
-            <td>PolySynth on Amin chord with distortion</td>
-          </tr>
-          <tr>
-            <td>N</td>
-            <td>Synth with autoWah</td>
-          </tr>
-          <tr>
-            <td>O</td>
-            <td>MembraneSynth with feedbackDelay</td>
-          </tr>
-          <tr>
-            <td>P</td>
-            <td>PolySynth on Cmaj chord with pingPongDelay and distortion</td>
-          </tr>
-          <tr>
-            <td>Q</td>
-            <td>Standard oscillator with tremolo</td>
-          </tr>
-          <tr>
-            <td>R</td>
-            <td>Standard Synth with pingPongDelay and autoWah</td>
-          </tr>
-          <tr>
-            <td>S</td>
-            <td>Standard synth on octaves</td>
-          </tr>
-          <tr>
-            <td>T</td>
-            <td>Standard Synth with chorus</td>
-          </tr>
-          <tr>
-            <td>U</td>
-            <td>Three AMSynths on octaves</td>
-          </tr>
-          <tr>
-            <td>V</td>
-            <td>Synth on high Cs</td>
-          </tr>
-          <tr>
-            <td>W</td>
-            <td>Low MetalSynth with pingPongDelay</td>
-          </tr>
-          <tr>
-            <td>X</td>
-            <td>MembraneSynth with feedbackDelay</td>
-          </tr>
-          <tr>
-            <td>Y</td>
-            <td>Standard synth descending with chorus</td>
-          </tr>
-          <tr>
-            <td>Z</td>
-            <td>Standard Synth on fast arpeggio</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="theworks">
+        <script src="js/build-v14-7-77/Tone.js"></script>
+        <h3>Press any key A-Z</h3>
+        <script src="js/interactive.js"></script>
+      </div>
+
+      <div class="keykey">
+        <table>
+          <thead>
+            <tr>
+              <th colspan=4>Input Key Reference/Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="tddark">A</td>
+              <td class="tdlight">PolySynth playing a Cmaj7add9 chord</td>
+              <td class="tddark">N</td>
+              <td class="tdlight">Synth with autoWah</td>
+            </tr>
+            <tr>
+              <td class="tddark">B</td>
+              <td class="tdlight">Unedited MetalSynth</td>
+              <td class="tddark">O</td>
+              <td class="tdlight">MembraneSynth with feedbackDelay</td>
+            </tr>
+            <tr>
+              <td class="tddark">C</td>
+              <td class="tdlight">Unedited MembraneSynth playing descending line</td>
+              <td class="tddark">P</td>
+              <td class="tdlight">PolySynth on Cmaj chord with pingPongDelay and distortion</td>
+            </tr>
+            <tr>
+              <td class="tddark">D</td>
+              <td class="tdlight">AMSynth</td>
+              <td class="tddark">Q</td>
+              <td class="tdlight">Standard oscillator with tremolo</td>
+            </tr>
+            <tr>
+              <td class="tddark">E</td>
+              <td class="tdlight">DuoSynth</td>
+              <td class="tddark">R</td>
+              <td class="tdlight">Standard Synth with pingPongDelay and autoWah</td>
+            </tr>
+            <tr>
+              <td class="tddark">F</td>
+              <td class="tdlight">PolySynth playing arpeggiated Emaj chord</td>
+              <td class="tddark">S</td>
+              <td class="tdlight">Standard synth on octaves</td>
+            </tr>
+            <tr>
+              <td class="tddark">G</td>
+              <td class="tdlight">Standard oscillator with autoPanner</td>
+              <td class="tddark">T</td>
+              <td class="tdlight"Standard Synth with chorus</td>
+            </tr>
+            <tr>
+              <td class="tddark">H</td>
+              <td class="tdlight">Standard oscillator with autoFilter</td>
+              <td class="tddark">U</td>
+              <td class="tdlight" >Three AMSynths on octaves</td>
+            </tr>
+            <tr>
+              <td class="tddark">I</td>
+              <td class="tdlight">Standard oscillator with autoPanner, autoFilter, and distortion</td>
+              <td class="tddark">V</td>
+              <td class="tdlight">Synth on high Cs</td>
+            </tr>
+            <tr>
+              <td class="tddark">J</td>
+              <td class="tdlight">PolySynth on a C#aug chord with chorus</td>
+              <td class="tddark">W</td>
+              <td class="tdlight">Low MetalSynth with pingPongDelay</td>
+            </tr>
+            <tr>
+              <td class="tddark">K</td>
+              <td class="tdlight">Polysynth on a C#aug chord with chorus</td>
+              <td class="tddark">X</td>
+              <td class="tdlight">MembraneSynth with feedbackDelay</td>
+            </tr>
+            <tr>
+              <td class="tddark">L</td>
+              <td class="tdlight">FMSynth with distortion</td>
+              <td class="tddark">Y</td>
+              <td class="tdlight">Standard synth descending with chorus</td>
+            </tr>
+            <tr>
+              <td class="tddark">M</td>
+              <td class="tdlight">PolySynth on Amin chord with distortion</td>
+              <td class="tddark">Z</td>
+              <td class="tdlight">Standard Synth on fast arpeggio</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br><br><br><br><br><br><br><br>
     </div>
 
   </body>

@@ -3,56 +3,71 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/master.css">
+    <link rel="stylesheet" href="master.css">
     <title>Algorithmic Music</title>
   </head>
+
   <body>
-    <nav>
+    <div class="navbar">
       <a href="./index.html">Home</a>
       <a href="./algorithms.html">Algorithms</a>
       <a href="./bandmaker.html">Band Maker</a>
       <a href="./interactive.html">Interactive</a>
-      <!-- <a href="./about.html">About</a> -->
-    </nav>
-
-    <div class="bandmakertitle">
-      <h2>Algorithms</h2>
     </div>
 
-    <div class="algorithmsdescription">
-      <style media="screen">
-        div {
-          width: 600px;
-          word-wrap: normal;
-        }
+    <div class="main">
+      <div class="title">
+        <h2>Algorithms</h2>
+      </div>
 
-      </style>
-      <p class="a">Welcome to the Algorithms page. The following algorithms (barring random) are all sorting algorithms. When the start button is pressed, they are fed a shuffled list of eight numbers to sort. After each pass through the list, the list is played as a C harmonic minor scale with the numbers 0-7 representing the scale tones. The algorithms will always end by playing the full scale.</p><br>
-      <p class="a">The random button plays "random" tones until stopped. All tones in random (as is the case for the sorting algorithms as well) are made using a standard Tone.js synth using a collection of notes within the key of C harmonic minor. Random tones is not truly random -- the notes that are played are randomly selected from a list of notes without replacement, meaning all notes in the list will play before any one note is played twice. This allows for a more random sounding result than sampling with replacement would allow for.</p><br>
-    </div>
+      <div class="description">
+        <p>Welcome to the Algorithms page. The following algorithms (barring random) are all sorting algorithms. When the start button is pressed, they are fed a shuffled list of eight numbers to sort. After each pass through the list, the list is played as a C harmonic minor scale with the numbers 0-7 representing the scale tones. The algorithms will always end by playing the full scale.</p><br>
+        <p>The random button plays "random" tones until stopped. All tones in random (as is the case for the sorting algorithms as well) are made using a standard Tone.js synth using a collection of notes within the key of C harmonic minor. Random tones is not truly random -- the notes that are played are randomly selected from a list of notes without replacement, meaning all notes in the list will play before any one note is played twice. This allows for a more random sounding result than sampling with replacement would allow for.</p><br>
+      </div>
 
-    <div class="algorithms">
-      <script src="js/build-v14-7-77/Tone.js"></script>
-      <div class="bubblesort">
-        <script src="js/bubblesort.js"></script>
-        <h3> Bubble Sort </h3>
-        <input type = "button" onclick = "bubble_start_stop()" value = "Start" id = "bubblebutton">
+      <div class="algorithms">
+        <script src="js/build-v14-7-77/Tone.js"></script>
+        <table class="header">
+          <tr>
+            <td class="tddark">
+              <h3>Algorithms</h3>
+            </td>
+          </tr>
+        </table>
+        <table>
+          <tr>
+            <td class="tdlight">
+              <div class="instrument">
+                <script src="js/bubblesort.js"></script>
+                <h3> Bubble Sort </h3>
+                <input type = "button" onclick = "bubble_start_stop()" value = "Start" id = "bubblebutton">
+              </div>
+            </td>
+            <td class="tdlight">
+              <div class="instrument">
+                <script src="js/selection_sort.js"></script><br><br>
+                <h3> Selection Sort </h3>
+                <input type = "button" onclick = "selection_start_stop()" value = "Start" id = "selectionbutton">
+              </div>
+            </td>
+            <td class="tdlight">
+              <div class="instrument">
+                <script src="js/combsort.js"></script><br><br>
+                <h3> Comb Sort </h3>
+                <input type = "button" onclick = "comb_start_stop()" value = "Start" id = "combbutton">
+              </div>
+            </td>
+            <td class="tdlight">
+              <div class="instrument">
+                <script src="js/random_tones.js"></script><br><br>
+                <h3> Random Tones </h3>
+                <input type = "button" onclick = "random_start_stop()" value = "Start" id = "randombutton">
+              </div>
+            </td>
+          </tr>
+        </table>
       </div>
-      <div class="selectionsort">
-        <script src="js/selection_sort.js"></script><br><br>
-        <h3> Selection Sort </h3>
-        <input type = "button" onclick = "selection_start_stop()" value = "Start" id = "selectionbutton">
-      </div>
-      <div class="combsort">
-        <script src="js/combsort.js"></script><br><br>
-        <h3> Comb Sort </h3>
-        <input type = "button" onclick = "comb_start_stop()" value = "Start" id = "combbutton">
-      </div>
-      <div class="random">
-        <script src="js/random_tones.js"></script><br><br>
-        <h3> Random Tones </h3>
-        <input type = "button" onclick = "random_start_stop()" value = "Start" id = "randombutton">
-      </div>
+      <br><br><br><br><br><br><br><br>
     </div>
   </body>
 </html>

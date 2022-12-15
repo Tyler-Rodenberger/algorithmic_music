@@ -3,55 +3,70 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/master.css">
+    <link rel="stylesheet" href="master.css">
     <title>Algorithmic Music</title>
   </head>
+
   <body>
-    <nav>
+    <div class="navbar">
       <a href="./index.html">Home</a>
       <a href="./algorithms.html">Algorithms</a>
       <a href="./bandmaker.html">Band Maker</a>
       <a href="./interactive.html">Interactive</a>
-      <!-- <a href="./about.html">About</a> -->
-    </nav>
-
-    <div class="bandmakertitle">
-      <h2>Band Maker</h2>
     </div>
 
-    <div class="bandmakerdescription">
-      <style media="screen">
-        div {
-          width: 600px;
-          word-wrap: normal;
-        }
-      </style>
-      <p class="a">Welcome to the Band Maker. Start the music and unmute parts at your leisure. Each musical part in the following two bar loop is manually coded using Node.js synths. They are all played together, but can be individually toggled on and off.</p><br>
-    </div>
-
-    <div class="bandmaker">
-      <script src="js/build-v14-7-77/Tone.js"></script>
-      <script src = "js/bandmaker.js"></script>
-      <div class="master">
-        <h3>Start/Stop Music</h3>
-        <input type="button" onclick="bandmaker_start_stop()" value="Start" id="bandmakerbutton">
+    <div class="main">
+      <div class="title">
+        <h2>Band Maker</h2>
       </div>
-      <div class="bass">
-        <h3>Bass</h3>
-        <input type="button" onclick="bass_mute_unmute()" value="Unmute" id="bassbutton">
+      <div class="description">
+        <p>Welcome to the Band Maker. Start the music and unmute parts at your leisure. Each musical part in the following two bar loop is manually coded using Node.js synths. They are all played together, but can be individually toggled on and off.</p>
       </div>
-      <div class="drums">
-        <h3>Drums</h3>
-        <input type="button" onclick="drums_mute_unmute()" value="Unmute" id="drumsbutton">
+      <br><br><br>
+      <div class="bandmaker">
+        <script src="js/build-v14-7-77/Tone.js"></script>
+        <script src = "js/bandmaker.js"></script>
+        <table class="header">
+          <tr>
+            <td class="tddark">
+              <div class="instrument">
+                <h3>Start/Stop Music</h3>
+                <input type="button" onclick="bandmaker_start_stop()" value="Start" id="bandmakerbutton">
+              </div>
+            </td>
+          </tr>
+        </table>
+        <table>
+          <tr>
+            <td class="tdlight">
+              <div class="instrument">
+                <h3>Bass</h3>
+                <input type="button" onclick="bass_mute_unmute()" value="Unmute" id="bassbutton">
+              </div>
+            </td>
+            <td class="tdlight">
+              <div class="instrument">
+                <h3>Drums</h3>
+                <input type="button" onclick="drums_mute_unmute()" value="Unmute" id="drumsbutton">
+              </div>
+            </td>
+            <td class="tdlight">
+              <div class="instrument">
+                <h3>Accompaniment</h3>
+                <input type="button" onclick="accompaniment_mute_unmute()" value="Unmute" id="accompanimentbutton">
+              </div>
+            </td>
+            <td class="tdlight">
+              <div class="instrument">
+                <h3>Lead</h3>
+                <input type="button" onclick="lead_synth_mute_unmute()" value="Unmute" id="leadsynthbutton">
+              </div>
+            </td>
+          </tr>
+          </thead>
+        </table>
       </div>
-      <div class="accompaniment">
-        <h3>Accompaniment</h3>
-        <input type="button" onclick="accompaniment_mute_unmute()" value="Unmute" id="accompanimentbutton">
-      </div>
-      <div class="">
-        <h3>Lead</h3>
-        <input type="button" onclick="lead_synth_mute_unmute()" value="Unmute" id="leadsynthbutton">
-      </div>
+      <br><br><br><br><br><br><br><br>
     </div>
   </body>
 </html>
