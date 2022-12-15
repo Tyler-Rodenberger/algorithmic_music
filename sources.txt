@@ -1,5 +1,7 @@
 References:
 https://developer.mozilla.org/en-US/ (For basics of web development)
-https://stackoverflow.com/ (For various challenges faced)
+https://stackoverflow.com/ (For various challenges faced with JavaScript and HTML)
 https://www.geeksforgeeks.org/ (For JavaScript syntax etc.)
 https://tonejs.github.io/docs/14.7.77/Instrument.html (Mostly referenced for the interactive page)
+https://www.javatpoint.com/ (For HTML)
+https://www.w3schools.com/ (For various challenges faced with JavaScript, HTML, and CSS)

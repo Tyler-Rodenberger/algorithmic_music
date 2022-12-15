@@ -3,6 +3,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/master.css">
     <title>Algorithmic Music</title>
   </head>
   <body>
@@ -10,22 +11,47 @@
       <a href="./index.html">Home</a>
       <a href="./algorithms.html">Algorithms</a>
       <a href="./bandmaker.html">Band Maker</a>
-      <a href="./interactive.html">Interactive Music</a>
-      <a href="./about.html">About</a>
+      <a href="./interactive.html">Interactive</a>
+      <!-- <a href="./about.html">About</a> -->
     </nav>
 
+    <div class="bandmakertitle">
+      <h2>Band Maker</h2>
+    </div>
+
+    <div class="bandmakerdescription">
+      <style media="screen">
+        div {
+          width: 600px;
+          word-wrap: normal;
+        }
+      </style>
+      <p class="a">Welcome to the Band Maker. Start the music and unmute parts at your leisure. Each musical part in the following two bar loop is manually coded using Node.js synths. They are all played together, but can be individually toggled on and off.</p><br>
+    </div>
+
+    <div class="bandmaker">
       <script src="js/build-v14-7-77/Tone.js"></script>
       <script src = "js/bandmaker.js"></script>
-
-      <h1>Start/Stop Music</h1>
-      <input type="button" onclick="bandmaker_start_stop()" value="Start" id="bandmakerbutton">
-      <h1>Bass</h1>
-      <input type="button" onclick="bass_mute_unmute()" value="Unmute" id="bassbutton">
-      <h1>Drums</h1>
-      <input type="button" onclick="drums_mute_unmute()" value="Unmute" id="drumsbutton">
-      <h1>Accompaniment</h1>
-      <input type="button" onclick="accompaniment_mute_unmute()" value="Unmute" id="accompanimentbutton">
-      <h1>Lead</h1>
-      <input type="button" onclick="lead_synth_mute_unmute()" value="Unmute" id="leadsynthbutton">
+      <div class="master">
+        <h3>Start/Stop Music</h3>
+        <input type="button" onclick="bandmaker_start_stop()" value="Start" id="bandmakerbutton">
+      </div>
+      <div class="bass">
+        <h3>Bass</h3>
+        <input type="button" onclick="bass_mute_unmute()" value="Unmute" id="bassbutton">
+      </div>
+      <div class="drums">
+        <h3>Drums</h3>
+        <input type="button" onclick="drums_mute_unmute()" value="Unmute" id="drumsbutton">
+      </div>
+      <div class="accompaniment">
+        <h3>Accompaniment</h3>
+        <input type="button" onclick="accompaniment_mute_unmute()" value="Unmute" id="accompanimentbutton">
+      </div>
+      <div class="">
+        <h3>Lead</h3>
+        <input type="button" onclick="lead_synth_mute_unmute()" value="Unmute" id="leadsynthbutton">
+      </div>
+    </div>
   </body>
 </html>

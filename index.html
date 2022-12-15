@@ -3,6 +3,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/master.css">
     <title>Algorithmic Music</title>
   </head>
   <body>
@@ -10,8 +11,24 @@
       <a href="./index.html">Home</a>
       <a href="./algorithms.html">Algorithms</a>
       <a href="./bandmaker.html">Band Maker</a>
-      <a href="./interactive.html">Interactive Music</a>
-      <a href="./about.html">About</a>
+      <a href="./interactive.html">Interactive</a>
+      <!-- <a href="./about.html">About</a> -->
     </nav>
+
+    <div class="hometitle">
+      <h1>An Exploration of Digital Music</h1>
+    </div>
+    <div class="description">
+      <style media="screen">
+        div {
+          width: 600px;
+          word-wrap: normal;
+        }
+      </style>
+      <p class="a">Welcome to this exploration of digital music. Initially, the intention was to explore various algorithms and represent their workings musically, but this idea soon branched out into opportunities for a band with toggleable members and an interactive keyboard.</p><br>
+      <p>In the Algorithms tab, you will find a series of sorting algorithms (bubble, selection, and comb) which will each play as described above. I found it interesting to work on this section because, over time, I could start to hear how these algorithms were sorting the data. In bubble sort, for example, the data is sorted by moving through the list several times and swapping the positions of adjacent numbers that are out of place. If you listen carefully, you can hear the swaps.</p><br>
+      <p>The BandMaker tab was less an exploration of the music itself, but more an experiment to see how various synth instruments interact with each other. There was some interesting logic involved with getting the parts to always play in sync, and it ended up being as much a coding exercise as it was an exploration of music.</p><br>
+      <p>Finally, the Interactive tab will take you to a musical typing keyboard. Don't expect to be able to play beautiful pieces on this tab because each key is not tied to a unique note, but to a unique sound. All sounds on this tab are made with synthesizers and effects using Tone.js. More info about how the individual sounds are created is on the Interactive page.</p>
+    </div>
   </body>
 </html>

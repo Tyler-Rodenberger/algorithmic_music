@@ -3,6 +3,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/master.css">
     <title>Algorithmic Music</title>
   </head>
   <body>
@@ -10,13 +11,28 @@
       <a href="./index.html">Home</a>
       <a href="./algorithms.html">Algorithms</a>
       <a href="./bandmaker.html">Band Maker</a>
-      <a href="./interactive.html">Interactive Music</a>
-      <a href="./about.html">About</a>
+      <a href="./interactive.html">Interactive</a>
+      <!-- <a href="./about.html">About</a> -->
     </nav>
-    <script src="js/build-v14-7-77/Tone.js"></script>
-    <h4>Press any key A-Z</h4>
-    <script src="js/interactive.js"></script>
-    <source src="audio_files/woof.mp3" type="audio/mp3" id="woofmp3"/>
+    <div class="interactivetitle">
+      <h2>Interactive</h2>
+    </div>
+
+    <div class="interactivedescription">
+      <style media="screen">
+        div {
+          width: 600px;
+          word-wrap: normal;
+        }
+      </style>
+      <p class="a">Welcome to the Interactive page. Each letter key is associated with a unique function which creates a unique sound. The sounds are all made using Node.js synths and oscillators with various effects being put on them. See the table below for more information.</p>
+    </div>
+
+    <div class="theworks">
+      <script src="js/build-v14-7-77/Tone.js"></script>
+      <h3>Press any key A-Z</h3>
+      <script src="js/interactive.js"></script>
+    </div>
 
     <div class="keykey">
       <table>
@@ -40,11 +56,11 @@
           </tr>
           <tr>
             <td>D</td>
-            <td>Volume-adjusted AMSynth</td>
+            <td>AMSynth</td>
           </tr>
           <tr>
             <td>E</td>
-            <td>Volume-adjusted DuoSynth</td>
+            <td>DuoSynth</td>
           </tr>
           <tr>
             <td>F</td>
